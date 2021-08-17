@@ -1,0 +1,37 @@
+<h3 class="mt-5">
+    To add new product Click the button | <a (click)="Add()" class="btn btn-warning m-1">Add</a>
+
+</h3>
+<div class="row">
+    <div class="col-lg-4 col-12" *ngFor="let item of product">
+        <div class="card">
+            <img class="card-img-top" [src]="item.Photo" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item.Title}} - {{item.Price}} {{"$"}}</h5>
+                <h3 style="color: blue;" *ngIf="isAvailable;else other_content">
+                    In Stock
+                </h3>
+                <ng-template  #other_content >Sold</ng-template>
+
+                <p class="card-text">{{item.Description}}</p>
+                <a href="#" class="btn btn-primary m-1">Add to Cart</a>
+                <a (click)="Details(item.Id)" class="btn btn-primary m-1">Details</a>
+                <a href="#" class="btn btn-primary m-1">Add to wishList</a>
+                <a (click)="Update(item.Id)" class="btn btn-info m-1">Edit</a>
+                <a (click)="Delete(item.Id)" class="btn btn-warning m-1">Delete</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <app-product-details [id]="productId" (onProductDetailsClose)="showDetails=false" *ngIf="showDetails">
+    </app-product-details>
+    <app-edit [id]="productId" (onProductEdit)="showEdit=false" *ngIf="showEdit"></app-edit>
+    <app-delete [id]="productId" (onProductDelete)="showDelete=false" *ngIf="showDelete"></app-delete>
+    <app-add (onProductAdd)="showAdd=false" *ngIf="showAdd"></app-add>
+
+</div>
+         <!-- <router-outlet></router-outlet> -->
+
