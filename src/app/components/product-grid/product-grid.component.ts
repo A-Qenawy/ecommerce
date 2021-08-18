@@ -23,33 +23,39 @@ export class ProductGridComponent implements OnInit {
   constructor(private service: ProductService, private route: Router) { }
 
   ngOnInit(): void {
-      this.service.getAll().subscribe(p=>{
-      this.product = p;
-    });
-   
+    debugger
+     this.service.getAll().subscribe(P=>{
+       this.product = P ;
+       console.log(this.product);
+       
+     });
 
+  }
+  ngOnChanges(){
+    debugger
+    this.service.getAll().subscribe(P=>{
+      this.product = P ;
+      console.log(this.product);
+    });
   }
   Add() {
     this.showAdd = true;
-    this.route.navigateByUrl("/product/add");
-
   }
   Details(id: number) {
+    debugger
     // this.showEdit = this.showAdd = this.showDelete = false;
     this.productId = id;
     this.route.navigateByUrl("/product/" + id)
     console.log("detailsMethod:", this.productId);
     this.showDetails = true;
-    // this.showDetails = true;
   }
   Update(id: number) {
-    
     this.productId = id;
+    this.route.navigateByUrl('/product/edit/' + id);
     this.showEdit = true;
-
   }
   Delete(id: number) {
-
+    debugger
     this.productId = id;
     this.route.navigateByUrl('/product/delete/' + id);
     this.showDelete = true;

@@ -15,8 +15,17 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
   Add() {
-    this.service.AddProduct(this.product);
-    this.onProductAdd.emit(true);
+    debugger
+    let x = this.service.AddProduct(this.product).subscribe(data=>{
+
+      this.onProductAdd.emit(true);
+      console.log(x);
+      console.log(data);
+      
+    });
+    
+=======
+
   }
 
   Close() {

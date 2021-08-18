@@ -1,6 +1,6 @@
 <div class="form-group d-none">
     <label for="Id">Id</label>
-    <input type="number" class="form-control" id="Id" disabled [(ngModel)]="product.Id">
+    <input type="number" class="form-control" id="Id" [(ngModel)]="product.Id">
 </div>
 <div class="form-group">
     <label for="Title">Title</label>
@@ -8,17 +8,17 @@
 </div>
 <div class="form-group">
     <label for="price">price</label>
-    <input type="number" class="form-control" id="Price" [(ngModel)]="product.Price">
+    <input type="number" class="form-control" id="price" [(ngModel)]="product.Price">
 </div>
 
 <div class="form-group">
     <label for="description">Description</label>
-    <input type="text" class="form-control" id="Description" [(ngModel)]="product.Description">
+    <input type="text" class="form-control" id="description" [(ngModel)]="product.Description">
 </div>
 
 <div class="form-group">
     <label for="photo">photo</label>
-    <input type="text" class="form-control" id="Photo" [(ngModel)]="product.Photo">
+    <input type="text" class="form-control" id="photo" [(ngModel)]="product.Photo">
 </div>
 <button class="btn btn-secondary mx-2" (click)="Close()">Close</button>
 <button class="btn btn-primary mx-2" (click)="Edit()">Edit</button>

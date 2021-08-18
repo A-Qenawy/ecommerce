@@ -16,11 +16,10 @@ export class StatusComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.product=this.service.getById(this.id);
 
   }
+
   ngOnChanges() {
-    // this.product = this.service.getById(this.id);
   }
 
 }

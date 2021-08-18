@@ -9,31 +9,42 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  product:Product;
+  product: Product;
   @Input() id: number;
   @Input() item: string;
   @Output() onProductDetailsClose: EventEmitter<boolean> = new EventEmitter<boolean>();
-  constructor(private service:ProductService) { }
+  constructor(private service: ProductService, private ac: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.service.getById(this.id).subscribe(p=>{
-      this.product = p;
-    });
-    console.log(this.id);
+    debugger
 
-  
-    
+    this.service.getById(this.id).subscribe(p => {
+      this.product = p;
+      console.log("idfromparent", this.id);
+      console.log(this.product);
+
+
+
+    })
+
+
+
   }
 
   ngOnChanges() {
-     this.service.getById(this.id).subscribe(p=>{
+    debugger
+
+    this.service.getById(this.id).subscribe(p => {
       this.product = p;
-     });
+    })
+
+    console.log(this.product);
+    
   }
 
   Close() {
     this.onProductDetailsClose.emit(false);
   }
-  
+
 
 }

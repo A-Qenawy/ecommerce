@@ -15,32 +15,27 @@ export class EditComponent implements OnInit {
   constructor(private service: ProductService, private ac: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-
-    this.ac.params.subscribe(a => {
-      this.service.getById(this.id).subscribe(p => {
-        this.product = p;
-        console.log("Init", this.product);
-
-      })
-
+    debugger
+    this.service.getById(this.id).subscribe(p => {
+      this.product = p;
     });
+
   }
   ngOnChanges() {
-    this.ac.params.subscribe(a => {
-      this.service.getById(this.id).subscribe(p => {
-        this.product = p;
-        console.log("Init", this.product);
-      })
-    })
+    debugger
+    this.service.getById(this.id).subscribe(p => {
+      this.product = p;
+    });
+
   }
 
   Edit() {
     debugger
-    this.service.EditProduct(this.product);
-    this.onProductEdit.emit(true);
-    console.log(this.product);
-    
+    this.service.EditProduct(this.product).subscribe(data => {
+      this.onProductEdit.emit(true);
+      console.log(data);
+
+    });
   }
 
   Close() {
