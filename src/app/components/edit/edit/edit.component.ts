@@ -38,7 +38,7 @@ export class EditComponent implements OnInit {
     //     this.product = p;
     //   })
 
-    // console.log("Ng",this.product);
+    // console.log("Ng",this.product);llk
 
   }
 
