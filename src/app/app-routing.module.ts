@@ -1,7 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddComponent } from './components/add/add/add.component';
+import { DeleteComponent } from './components/delete/delete/delete.component';
+import { ProductDetailsComponent } from './components/details/product-details/product-details.component';
+import { EditComponent } from './components/edit/edit/edit.component';
+import { ProductGridComponent } from './components/product-grid/product-grid.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'',component:ProductGridComponent},
+  {path:'product/:id',component:ProductDetailsComponent},
+  {path:'product/edit/:id',component:EditComponent},
+  {path:'product/delete/:id',component:DeleteComponent},
+  {path:'product/Add',component:AddComponent},
+
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
