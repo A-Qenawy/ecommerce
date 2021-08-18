@@ -26,19 +26,6 @@ export class EditComponent implements OnInit {
     this.service.getById(this.id).subscribe(p => {
       this.product = p;
     });
-    //debugger
-    // let tempProduct = this.service.getById(this.id);
-    // this.product.id = tempProduct.id;
-    // this.product.title = tempProduct.title;
-    // this.product.description = tempProduct.description;
-    // this.product.photo = tempProduct.photo;
-
-    //   this.service.getById(this.id).subscribe(p=>{
-    //     this.service.EditProduct(this.product);
-    //     this.product = p;
-    //   })
-
-    // console.log("Ng",this.product);llk
 
   }
 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -22,12 +23,16 @@ export class DeleteComponent implements OnInit {
     })
 
     console.log(this.product);
-  }
+}
+  
   ngOnChanges() {
     this.service.getById(this.id).subscribe(p => {
       this.product = p;
     })
     console.log(this.product);
+      console.log(this.product);
+    });
+
   }
   Close() {
     this.onProductDelete.emit(false);
@@ -40,5 +45,7 @@ export class DeleteComponent implements OnInit {
     
     })
     this.onProductDelete.emit(true);
+
+
   }
 }

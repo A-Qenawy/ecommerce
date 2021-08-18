@@ -24,6 +24,8 @@ export class AddComponent implements OnInit {
       
     });
     
+=======
+
   }
 
   Close() {

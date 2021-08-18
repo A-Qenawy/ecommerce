@@ -16,7 +16,9 @@ import { DeleteComponent } from './components/delete/delete/delete.component';
 import { FormsModule } from '@angular/forms';
 import { AddComponent } from './components/add/add/add.component';
 import { StatusComponent } from './components/prodcut-status/status/status.component';
-import {HttpClientModule} from '@angular/common/http'
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import {HttpClientModule} from '@angular/common/http'
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    HttpClientModule,
+
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

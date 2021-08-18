@@ -9,8 +9,8 @@ import { ProductGridComponent } from './components/product-grid/product-grid.com
 const routes: Routes = [
   {path:'',component:ProductGridComponent},
   {path:'product/:id',component:ProductDetailsComponent},
-  {path:'product/edit/:id',component:EditComponent},
-  {path:'product/delete/:id',component:DeleteComponent},
+  {path:'product/edit/:Id',component:EditComponent},
+  {path:'product/delete/:Id',component:DeleteComponent},
   {path:'product/Add',component:AddComponent},
 
 
